@@ -405,7 +405,7 @@ export default {
     getParents(element, parents = []) {
         const parent = this.getParentNode(element);
 
-        return parent === null ? parents : this.getParents(parent, parents.concat([parent]));
+        return (parent === null || parent === undefined) ? parents : this.getParents(parent, parents.concat([parent]));
     },
 
     getScrollableParents(element) {
